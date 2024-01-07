@@ -1,6 +1,6 @@
 public class LongestSubArrayOf1s {
     public static void main(String[] args) {
-        int[] nums = {0,1,1,1,0,1,1,0,1};
+        int[] nums = {1,1,0,1};
         System.out.println(longestSubarray(nums));
 
     }
@@ -13,10 +13,9 @@ public class LongestSubArrayOf1s {
             if(nums[i] == 0 && zeros > 0){
                 zeros--;
             }
-            System.out.println(maxlen);
             if(nums[i] == 0 & zeros <= 0){
                 start++;
-                maxlen = Math.max(maxlen,end);
+                maxlen = Math.max(maxlen,end + 1);
                 
                 end = 0 ;
             }
