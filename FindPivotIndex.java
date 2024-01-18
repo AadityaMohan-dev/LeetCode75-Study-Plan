@@ -4,12 +4,16 @@ public class FindPivotIndex {
         System.out.println(pivotIndex(nums));
     }
     public static int pivotIndex(int[] nums) {
-        int pivot = Math.round(nums.length/2);
-        int start = 0;
-        int end = nums.length;
-        
-
-
-        return 1;
+        int totalSum = 0;
+        int leftSum = 0;
+        for(int ele : nums){
+           totalSum += ele;
+        }
+        for(int i = 0 ; i < nums.length; leftSum +=nums[i++]){
+           if(leftSum *2 == totalSum -nums[i]){
+               return i;
+           }
+       }
+       return -1;
     }
 }
